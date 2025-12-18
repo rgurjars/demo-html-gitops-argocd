@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: demo-html
-          image: hyperbeansrahul/demo-html:v1
+          image: hyperbeansrahul/demo-html:v2
           ports:
             - containerPort: 80
 
