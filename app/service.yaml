@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-html
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-html
+  template:
+    metadata:
+      labels:
+        app: demo-html
+    spec:
+      containers:
+        - name: demo-html
+          image: hyperbeansrahul/demo-html:v1
+          ports:
+            - containerPort: 80
+
