@@ -1,21 +1,14 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   name: demo-html
   namespace: default
 spec:
-  replicas: 1
+  type: NodePort
   selector:
-    matchLabels:
-      app: demo-html
-  template:
-    metadata:
-      labels:
-        app: demo-html
-    spec:
-      containers:
-        - name: demo-html
-          image: hyperbeansrahul/demo-html:v1
-          ports:
-            - containerPort: 82
+    app: demo-html
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
 
